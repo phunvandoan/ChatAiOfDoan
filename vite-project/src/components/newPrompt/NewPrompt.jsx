@@ -9,7 +9,7 @@ import PropTypes from "prop-types";
 
 function NewPromp({ data }) {
   const [question, setQuestion] = useState();
-  const [answer, setAnswer] = useState();
+  const [answer, setAnswer] = useState("bot: :)))");
   const [img, setImg] = useState({
     isLoading: false,
     error: "",
@@ -90,7 +90,7 @@ function NewPromp({ data }) {
         const chunkText = chunk.text();
         for (const char of chunkText) {
           setAnswer((prev) => prev + char);
-          await new Promise((resolve) => setTimeout(resolve, 10));
+          await new Promise((resolve) => setTimeout(resolve, 20));
         }
       }
       mutation.mutate();
